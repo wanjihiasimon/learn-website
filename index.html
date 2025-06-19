@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learn to Make Learning Fun</title>
+  <link rel="icon" href="favicon.ico">
+  <meta name="description" content="Fun and Easy Learning Platform for CISA, CCNA, and Linux.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #2c3e50;
+    }
+
+    /* NAVIGATION */
+    nav {
+      background-color: #34495e;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav h1 {
+      color: white;
+      font-size: 1.5em;
+    }
+
+    .menu {
+      display: flex;
+      gap: 15px;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+    }
+
+    .menu a:hover {
+      background-color: #1abc9c;
+      border-radius: 5px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      background: white;
+      height: 3px;
+      margin: 4px 0;
+      width: 25px;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #2c3e50;
+      }
+
+      .menu.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* MAIN CONTENT */
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #ecf0f1;
+    }
+
+    header h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    section {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    h3 {
+      color: #2980b9;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #2980b9;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    a.button:hover {
+      background-color: #1abc9c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #ecf0f1;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>Learning Fun</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="cisa.html">CISA</a>
+      <a href="ccna.html">CCNA</a>
+      <a href="linux.html">Linux</a>
+    </div>
+  </nav>
+
+  <header>
+    <h2>Learn to Make Learning Fun</h2>
+    <p>Self-paced learning resources for CISA, CCNA, and Linux — all in one place!</p>
+  </header>
+
+  <main>
+    <section>
+      <h3>CISA - Certified Information Systems Auditor</h3>
+      <p>Master the five domains of CISA including governance, IT auditing, systems acquisition, operations, and information security.</p>
+      <a href="cisa.html" class="button">Explore CISA</a>
+    </section>
+
+    <section>
+      <h3>CCNA - Cisco Certified Network Associate</h3>
+      <p>Learn core networking concepts such as IP routing, switching, VLANs, OSPF, and network security.</p>
+      <a href="ccna.html" class="button">Explore CCNA</a>
+    </section>
+
+    <section>
+      <h3>Linux Essentials</h3>
+      <p>Build your Linux skills from the ground up: shell commands, permissions, services, users, and scripting.</p>
+      <a href="linux.html" class="button">Explore Linux</a>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Learn to Make Learning Fun. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('show');
+    }
+  </script>
+
+</body>
+</html>
