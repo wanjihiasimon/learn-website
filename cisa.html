@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CISA Domains</title>
+  <link rel="icon" href="favicon.ico">
+  <meta name="description" content="Explore the five key CISA domains with summaries and insights.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #2c3e50;
+    }
+
+    nav {
+      background-color: #34495e;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav h1 {
+      color: white;
+      font-size: 1.5em;
+    }
+
+    .menu {
+      display: flex;
+      gap: 15px;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+    }
+
+    .menu a:hover {
+      background-color: #1abc9c;
+      border-radius: 5px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      background: white;
+      height: 3px;
+      margin: 4px 0;
+      width: 25px;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .menu { display: none; flex-direction: column; width: 100%; background-color: #2c3e50; }
+      .menu.show { display: flex; }
+      .hamburger { display: flex; }
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #ecf0f1;
+    }
+
+    header h2 { font-size: 2em; }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    ul {
+      font-size: 18px;
+      list-style-type: square;
+      margin-left: 20px;
+      line-height: 2;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #ecf0f1;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>Learning Fun</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="menu" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="cisa.html">CISA</a>
+      <a href="ccna.html">CCNA</a>
+      <a href="linux.html">Linux</a>
+    </div>
+  </nav>
+
+  <header>
+    <h2>CISA - 5 Domains</h2>
+  </header>
+
+  <main>
+    <ul>
+      <li>Information System Auditing Process</li>
+      <li>Governance and Management of IT</li>
+      <li>Information Systems Acquisition, Development and Implementation</li>
+      <li>Information Systems Operations and Business Resilience</li>
+      <li>Protection of Information Assets</li>
+    </ul>
+  </main>
+
+  <footer>
+    &copy; 2025 Learn to Make Learning Fun. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('show');
+    }
+  </script>
+
+</body>
+</html>
