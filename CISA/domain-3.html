@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CISA Domain 3 - Systems Acquisition & Development</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    header, main, footer {
+      max-width: 960px;
+      margin: auto;
+      padding: 20px;
+    }
+    .section {
+      background: white;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .collapsible {
+      background-color: #3498db;
+      color: white;
+      cursor: pointer;
+      padding: 10px;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 16px;
+      width: 100%;
+    }
+    .content {
+      display: none;
+      padding: 10px;
+      background: #ecf0f1;
+      margin-top: 5px;
+    }
+    .flashcard {
+      margin-top: 10px;
+    }
+    #progress-container {
+      height: 6px;
+      background: #ddd;
+    }
+    #progress-bar {
+      height: 6px;
+      width: 0%;
+      background: #27ae60;
+    }
+  </style>
+</head>
+<body>
+
+<div id="progress-container"><div id="progress-bar"></div></div>
+
+<nav>
+  <div><strong>Learning Fun</strong></div>
+  <div>
+    <a href="../index.html">Home</a>
+    <a href="../cisa.html">CISA</a>
+    <a href="../ccna.html">CCNA</a>
+    <a href="../linux.html">Linux</a>
+  </div>
+</nav>
+
+<header>
+  <h1>CISA Domain 3: Information Systems Acquisition, Development, and Implementation</h1>
+</header>
+
+<main id="printable">
+  <div class="section">
+    <button class="collapsible">1. Business Case & Feasibility</button>
+    <div class="content">
+      <p>Evaluates technical, operational, and financial viability of a proposed system. Ensures alignment with business goals and provides justification for investment.</p>
+    </div>
+
+    <button class="collapsible">2. Project Governance & Management</button>
+    <div class="content">
+      <p>Establishes project roles, responsibilities, timelines, and stakeholder engagement through frameworks like PRINCE2 or PMBOK.</p>
+    </div>
+
+    <button class="collapsible">3. System Development Life Cycle (SDLC)</button>
+    <div class="content">
+      <p>SDLC includes planning, analysis, design, development, testing, implementation, and maintenance. It ensures structure and quality across IT project phases.</p>
+    </div>
+
+    <button class="collapsible">4. Change Management</button>
+    <div class="content">
+      <p>Controls modifications to systems or infrastructure to minimize risk. Includes change request, review, approval, testing, and rollback plans.</p>
+    </div>
+
+    <button class="collapsible">5. Application Controls</button>
+    <div class="content">
+      <p>Embedded in applications to ensure input accuracy, processing integrity, and output reliability (e.g. validation checks, authorization).</p>
+    </div>
+
+    <button class="collapsible">6. System Acquisition Methods</button>
+    <div class="content">
+      <p>Includes in-house development, outsourcing, commercial off-the-shelf (COTS) systems, or Software-as-a-Service (SaaS). Selection depends on risk, cost, and control needs.</p>
+    </div>
+
+    <button class="collapsible">7. Post-Implementation Review</button>
+    <div class="content">
+      <p>Assesses whether the system met objectives, stayed within budget/scope, and identifies improvements or lessons learned for future projects.</p>
+    </div>
+
+    <button class="collapsible">8. IS Testing Strategies</button>
+    <div class="content">
+      <p>Ensures system meets requirements and works as intended. Includes unit, system, integration, user acceptance (UAT), and regression testing.</p>
+    </div>
+
+    <button class="collapsible">9. Roles in System Development</button>
+    <div class="content">
+      <p>Includes business sponsors, steering committees, QA teams, developers, and end users. Each plays a role in ensuring project success and governance.</p>
+    </div>
+  </div>
+
+  <div class="section flashcard">
+    <h2>Flashcard</h2>
+    <p><strong>Q:</strong> What are the key phases in the SDLC?</p>
+    <button onclick="document.getElementById('flash1').style.display='block'">Show Answer</button>
+    <p id="flash1" style="display:none;"><strong>A:</strong> Planning, analysis, design, development, testing, implementation, and maintenance.</p>
+  </div>
+
+  <div class="section">
+    <h2>Quiz</h2>
+    <p><strong>1. Which of the following best describes the purpose of a feasibility study?</strong></p>
+    <label><input type="radio" name="q1" value="a"> To conduct final system testing</label><br>
+    <label><input type="radio" name="q1" value="b"> To validate user acceptance</label><br>
+    <label><input type="radio" name="q1" value="c"> To justify the system based on cost, benefit, and alignment</label><br><br>
+    <button onclick="checkQuiz()">Submit</button>
+    <p id="quiz-result" style="font-weight: bold;"></p>
+  </div>
+
+  <div class="section">
+    <button onclick="generatePDF()">Download as PDF</button>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 Learning Fun | Built for CISA Domain 3</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+  // Collapsible
+  document.querySelectorAll(".collapsible").forEach(button => {
+    button.addEventListener("click", () => {
+      const content = button.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    });
+  });
+
+  // Scroll progress
+  window.onscroll = () => {
+    const scroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (scroll / height) * 100;
+    document.getElementById("progress-bar").style.width = scrolled + "%";
+  };
+
+  // PDF
+  function generatePDF() {
+    const element = document.getElementById("printable");
+    html2pdf().from(element).save("CISA_Domain3_Interactive.pdf");
+  }
+
+  // Quiz
+  function checkQuiz() {
+    const q1 = document.querySelector('input[name="q1"]:checked');
+    const result = document.getElementById('quiz-result');
+    if (!q1) {
+      result.textContent = "Please select an answer.";
+      result.style.color = "orange";
+    } else if (q1.value === "c") {
+      result.textContent = "✅ Correct!";
+      result.style.color = "green";
+    } else {
+      result.textContent = "❌ Incorrect. Correct answer: To justify the system based on cost, benefit, and alignment.";
+      result.style.color = "red";
+    }
+  }
+</script>
+
+</body>
+</html>
