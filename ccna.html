@@ -1,83 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CCNA Overview</title>
-  <link rel="icon" href="favicon.ico">
-  <meta name="description" content="Overview of CCNA certification topics including networking, IP services, and automation.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>CCNA Full Learning Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <style>
-    /* Same styles as in cisa.html */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body { font-family: Arial, sans-serif; background-color: #f9f9f9; color: #2c3e50; }
-
-    nav { background-color: #34495e; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-    nav h1 { color: white; font-size: 1.5em; }
-
-    .menu { display: flex; gap: 15px; }
-    .menu a { color: white; text-decoration: none; font-weight: bold; padding: 8px 12px; }
-    .menu a:hover { background-color: #1abc9c; border-radius: 5px; }
-
-    .hamburger { display: none; flex-direction: column; cursor: pointer; }
-    .hamburger span { background: white; height: 3px; margin: 4px 0; width: 25px; border-radius: 2px; }
-
-    @media (max-width: 768px) {
-      .menu { display: none; flex-direction: column; width: 100%; background-color: #2c3e50; }
-      .menu.show { display: flex; }
-      .hamburger { display: flex; }
-    }
-
-    header { text-align: center; padding: 30px 20px; background-color: #ecf0f1; }
-    header h2 { font-size: 2em; }
-
-    main { max-width: 800px; margin: auto; padding: 30px 20px; }
-
-    p { font-size: 18px; line-height: 1.6; }
-
-    footer { text-align: center; padding: 20px; background: #ecf0f1; font-size: 14px; color: #555; }
+    body { font-family: Arial, sans-serif; background: #f9f9f9; color: #2c3e50; margin: 0; padding: 0; }
+    nav { background: #34495e; padding: 1em; display: flex; justify-content: space-between; align-items: center; color: white; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; margin: 0 10px; font-weight: bold; }
+    header, main, footer { max-width: 1000px; margin: auto; padding: 1.5em; }
+    header { background: #ecf0f1; text-align: center; }
+    .section { background: white; margin: 20px 0; padding: 1em; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .collapsible { background: #2980b9; color: white; padding: 12px; width: 100%; border: none; text-align: left; font-size: 1em; cursor: pointer; border-radius: 5px; }
+    .content { display: none; margin-top: 10px; padding: 10px; background: #f0f0f0; border-radius: 5px; }
+    pre { background: #eee; padding: 10px; overflow-x: auto; }
+    footer { background: #ecf0f1; text-align: center; font-size: 14px; color: #555; padding: 1em; margin-top: 2em; }
+    .flashcard { margin: 10px 0; padding: 10px; background: #dff0d8; border-left: 5px solid #27ae60; }
   </style>
 </head>
 <body>
 
-  <nav>
-    <h1>Learning Fun</h1>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
+<nav>
+  <div><strong>Learning Fun</strong></div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="cisa.html">CISA</a>
+    <a href="ccna.html">CCNA</a>
+    <a href="linux.html">Linux</a>
+  </div>
+</nav>
+
+<header>
+  <h1>CCNA Interactive Learning</h1>
+  <p>Enriched learning with collapsibles, flashcards, CLI commands, and PDF export</p>
+  <button onclick="generatePDF()">📄 Download as PDF</button>
+</header>
+
+<main id="printable">
+
+  <!-- Network Fundamentals -->
+  <div class="section">
+    <button class="collapsible">📡 Network Fundamentals</button>
+    <div class="content">
+      <h3>OSI vs TCP/IP</h3>
+      <p>OSI: Application → Presentation → Session → Transport → Network → Data Link → Physical</p>
+      <p>TCP/IP: Application → Transport → Internet → Network Access</p>
+
+      <h3>Subnetting</h3>
+      <p>2<sup>n</sup> - 2 usable hosts. Example: /26 → 2<sup>6</sup>-2 = 62 hosts.</p>
+
+      <h3>IPv4 vs IPv6</h3>
+      <p>IPv4 = 32-bit. IPv6 = 128-bit. IPv6 is more secure and scalable.</p>
+
+      <h3>CLI Example</h3>
+      <pre><code>ping 8.8.8.8
+traceroute google.com</code></pre>
+
+      <div class="flashcard"><strong>Flashcard:</strong> Layer IP works at? → <em>Network (Layer 3)</em></div>
     </div>
-    <div class="menu" id="navMenu">
-      <a href="index.html">Home</a>
-      <a href="cisa.html">CISA</a>
-      <a href="ccna.html">CCNA</a>
-      <a href="linux.html">Linux</a>
+  </div>
+
+  <!-- Network Access -->
+  <div class="section">
+    <button class="collapsible">🔌 Network Access</button>
+    <div class="content">
+      <h3>Switching & MAC</h3>
+      <p>Switches use MAC addresses to forward frames at Layer 2.</p>
+
+      <h3>VLANs</h3>
+      <p>VLANs segment broadcast domains. Trunking allows multiple VLANs on one link.</p>
+      <pre><code>switchport mode trunk
+switchport trunk allowed vlan 10,20</code></pre>
+
+      <h3>STP</h3>
+      <p>Spanning Tree Protocol prevents loops by blocking redundant paths.</p>
+
+      <div class="flashcard"><strong>Flashcard:</strong> Purpose of VLAN? → <em>Segment broadcast domains</em></div>
     </div>
-  </nav>
+  </div>
 
-  <header>
-    <h2>CCNA Learning Overview</h2>
-  </header>
+  <!-- IP Connectivity -->
+  <div class="section">
+    <button class="collapsible">🌍 IP Connectivity</button>
+    <div class="content">
+      <h3>Routing Basics</h3>
+      <p>Routers forward packets based on Layer 3 addresses.</p>
 
-  <main>
-    <p>The CCNA certification covers a wide range of networking concepts including:</p>
-    <ul>
-      <li>Network Fundamentals</li>
-      <li>IP Connectivity and Routing (e.g., OSPF, static routes)</li>
-      <li>Network Access (Switching, VLANs, STP)</li>
-      <li>IP Services (NAT, DHCP, DNS)</li>
-      <li>Security Fundamentals</li>
-      <li>Automation and Programmability</li>
-    </ul>
-  </main>
+      <h3>Static vs Dynamic</h3>
+      <pre><code>ip route 0.0.0.0 0.0.0.0 192.168.1.1</code></pre>
 
-  <footer>
-    &copy; 2025 Learn to Make Learning Fun. All rights reserved.
-  </footer>
+      <h3>OSPF</h3>
+      <pre><code>router ospf 1
+network 192.168.1.0 0.0.0.255 area 0</code></pre>
+    </div>
+  </div>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById('navMenu').classList.toggle('show');
+  <!-- IP Services -->
+  <div class="section">
+    <button class="collapsible">🛠️ IP Services</button>
+    <div class="content">
+      <h3>NAT</h3>
+      <p>Translates private to public IPs. PAT uses ports.</p>
+
+      <pre><code>ip nat inside source list 1 interface fa0/0 overload</code></pre>
+
+      <h3>DHCP, DNS</h3>
+      <p>DHCP auto-assigns IPs. DNS resolves names.</p>
+
+      <h3>SNMP/Syslog</h3>
+      <p>SNMP monitors devices. Syslog logs events.</p>
+    </div>
+  </div>
+
+  <!-- Security Fundamentals -->
+  <div class="section">
+    <button class="collapsible">🔐 Security Fundamentals</button>
+    <div class="content">
+      <h3>Authentication</h3>
+      <pre><code>enable secret myPassword
+line vty 0 4
+ password cisco
+ login</code></pre>
+
+      <h3>ACL Example</h3>
+      <pre><code>access-list 10 permit 192.168.1.0 0.0.0.255
+interface fa0/0
+ ip access-group 10 in</code></pre>
+
+      <div class="flashcard"><strong>Flashcard:</strong> ACLs operate at? → <em>Layer 3</em></div>
+    </div>
+  </div>
+
+  <!-- Quiz -->
+  <div class="section">
+    <h3>📝 Quick Quiz</h3>
+    <p>1. Which protocol is used to prevent switching loops?</p>
+    <label><input type="radio" name="q1" value="a"> RIP</label><br>
+    <label><input type="radio" name="q1" value="b"> STP</label><br>
+    <label><input type="radio" name="q1" value="c"> NAT</label><br>
+    <p id="quiz-result1" style="font-weight:bold;"></p>
+    <button onclick="checkQuiz1()">Check Answer</button>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2025 Learning Fun. All rights reserved.
+</footer>
+
+<script>
+  // Collapsibles
+  document.querySelectorAll(".collapsible").forEach(button => {
+    button.addEventListener("click", () => {
+      const content = button.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    });
+  });
+
+  // PDF Export
+  function generatePDF() {
+    html2pdf().from(document.getElementById("printable")).save("CCNA_Learning_Page.pdf");
+  }
+
+  // Quiz
+  function checkQuiz1() {
+    const q = document.querySelector('input[name="q1"]:checked');
+    const r = document.getElementById('quiz-result1');
+    if (!q) {
+      r.textContent = "Please select an answer.";
+      r.style.color = "orange";
+    } else if (q.value === "b") {
+      r.textContent = "✅ Correct! STP prevents switching loops.";
+      r.style.color = "green";
+    } else {
+      r.textContent = "❌ Incorrect. Correct answer: STP.";
+      r.style.color = "red";
     }
-  </script>
+  }
+</script>
 
 </body>
 </html>
