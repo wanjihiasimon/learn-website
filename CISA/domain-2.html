@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CISA Domain 2 - Governance and Management of IT</title>
+  <link rel="icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; }
+    header, nav, main, footer { max-width: 1000px; margin: auto; padding: 20px; }
+    nav { background: #2c3e50; color: white; display: flex; justify-content: space-between; align-items: center; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; }
+    h1, h2 { color: #2c3e50; }
+    .section, .collapsible-content, .flashcard, #quiz-section {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .collapsible {
+      background-color: #3498db;
+      color: white;
+      cursor: pointer;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      font-size: 16px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .collapsible-content { display: none; margin-top: 5px; }
+    footer { background: #ecf0f1; text-align: center; font-size: 14px; padding: 20px; }
+    #progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 5px; background: #ccc; z-index: 9999; }
+    #progress-bar { height: 5px; background: #27ae60; width: 0%; }
+  </style>
+</head>
+<body>
+  <div id="progress-container"><div id="progress-bar"></div></div>
+
+  <nav>
+    <div><strong>Learning Fun</strong></div>
+    <div>
+      <a href="#">Home</a>
+      <a href="#">CISA</a>
+      <a href="#">CCNA</a>
+      <a href="#">Linux</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>CISA Domain 2: Governance and Management of IT</h1>
+    <button onclick="generatePDF()">📄 Download as PDF</button>
+  </header>
+
+  <main id="printable">
+
+    <button class="collapsible">1. IT Governance</button>
+    <div class="collapsible-content">
+      <p>IT Governance ensures that IT investments support business goals, risks are managed, and resources are optimized.</p>
+      <ul>
+        <li><strong>Frameworks:</strong> COBIT, ISO/IEC 38500, ITIL</li>
+        <li><strong>Principles:</strong> Strategic alignment, value delivery, risk management, performance measurement</li>
+        <li><strong>Entities:</strong> Board, IT Steering Committee, CIO</li>
+      </ul>
+      <p><em>Example:</em> COBIT uses processes like EDM01 (“Ensure Governance Framework Setting and Maintenance”).</p>
+    </div>
+
+    <button class="collapsible">2. IT Strategy</button>
+    <div class="collapsible-content">
+      <p>IT strategy defines long-term plans to align IT with business goals. It supports competitive advantage and digital transformation.</p>
+      <ul>
+        <li>Includes mission, vision, goals, and KPIs</li>
+        <li>Must align with enterprise business strategy</li>
+        <li>Reviewed periodically to address tech trends (cloud, AI, automation)</li>
+      </ul>
+      <p><strong>Tools:</strong> SWOT Analysis, Balanced Scorecard</p>
+    </div>
+
+    <button class="collapsible">3. Organizational Structure</button>
+    <div class="collapsible-content">
+      <p>A well-defined IT organization structure supports effective governance by clarifying roles, responsibilities, and reporting.</p>
+      <ul>
+        <li><strong>Key Roles:</strong> CIO, CTO, CISO, IT Steering Committee</li>
+        <li><strong>Concepts:</strong> Segregation of Duties (SoD), Lines of Defense</li>
+        <li><strong>Goal:</strong> Avoid conflict of interest and increase accountability</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">4. Risk Management</button>
+    <div class="collapsible-content">
+      <p>Risk Management identifies, evaluates, and mitigates risks to IT systems and information assets.</p>
+      <ol>
+        <li><strong>Identification:</strong> Asset mapping, threat models</li>
+        <li><strong>Assessment:</strong> Likelihood × Impact → Risk Score</li>
+        <li><strong>Mitigation:</strong> Avoid, transfer, mitigate, or accept risk</li>
+      </ol>
+      <p><strong>Tools:</strong> Risk Register, Risk Heat Map, ISO 27005</p>
+    </div>
+
+    <button class="collapsible">5. Information Security Governance</button>
+    <div class="collapsible-content">
+      <p>Information Security Governance ensures a framework exists to protect the CIA (confidentiality, integrity, availability) of information.</p>
+      <ul>
+        <li>Led by CISO or Information Security Council</li>
+        <li>Relies on policies, controls, awareness, and monitoring</li>
+        <li>Frameworks: ISO 27001, NIST Cybersecurity Framework</li>
+      </ul>
+      <p><em>Key Point:</em> Security governance is strategic, not operational—it sets direction, not just configures firewalls.</p>
+    </div>
+    <button class="collapsible">6. Resource Management</button>
+    <div class="collapsible-content">
+      <p>Resource management ensures effective use of IT assets, staff, and budgets to meet business goals.</p>
+      <ul>
+        <li><strong>Includes:</strong> Human resources, hardware, software, IT services</li>
+        <li>Uses tools like inventory databases and workforce planning</li>
+        <li>Ensures alignment with demand forecasting and capacity planning</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">7. Performance Monitoring</button>
+    <div class="collapsible-content">
+      <p>Performance monitoring ensures IT delivers value and meets defined service levels.</p>
+      <ul>
+        <li><strong>Metrics:</strong> Key Performance Indicators (KPIs), Service Level Agreements (SLAs)</li>
+        <li><strong>Processes:</strong> Regular reporting, dashboard visualization, root cause analysis</li>
+        <li><strong>Goal:</strong> Enable proactive decision-making and continuous improvement</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">8. Business Continuity Management (BCM)</button>
+    <div class="collapsible-content">
+      <p>BCM ensures the organization can maintain or quickly resume critical operations during disruption.</p>
+      <ul>
+        <li>Includes <strong>BCP</strong> (Business Continuity Plan) and <strong>DRP</strong> (Disaster Recovery Plan)</li>
+        <li>Defines RTO (Recovery Time Objective) and RPO (Recovery Point Objective)</li>
+        <li>Plans must be tested regularly and updated after major changes</li>
+      </ul>
+      <p><em>Example:</em> A DR test simulates a server outage to verify system restoration within 4 hours (RTO).</p>
+    </div>
+
+    <button class="collapsible">9. Compliance & Legal</button>
+    <div class="collapsible-content">
+      <p>Organizations must ensure IT operations adhere to legal, regulatory, and contractual requirements.</p>
+      <ul>
+        <li><strong>Examples:</strong> GDPR, HIPAA, PCI DSS, SOX</li>
+        <li><strong>Activities:</strong> Internal audits, compliance checklists, legal reviews</li>
+        <li>Includes software license management and data privacy programs</li>
+      </ul>
+      <p><strong>Auditor Role:</strong> Verify documentation and evidence of compliance</p>
+    </div>
+
+    <button class="collapsible">10. Third-Party Management</button>
+    <div class="collapsible-content">
+      <p>Vendors, cloud providers, and contractors introduce external risks. Governance must extend to these relationships.</p>
+      <ul>
+        <li><strong>Controls:</strong> Due diligence, vendor risk assessment, contract SLAs</li>
+        <li>Auditors should examine access rights, encryption, and data handling by third parties</li>
+        <li>Regular performance reviews and audits are recommended</li>
+      </ul>
+    </div>
+
+    <!-- Flashcard -->
+    <div class="section flashcard">
+      <h2>Flashcard</h2>
+      <p><strong>Q:</strong> What’s the difference between RTO and RPO?</p>
+      <button onclick="document.getElementById('flash1').style.display='block'">Show Answer</button>
+      <p id="flash1" style="display:none;">
+        <strong>A:</strong> RTO is the max time to restore a service; RPO is the max acceptable data loss (time-wise).
+      </p>
+    </div>
+
+    <!-- Quiz -->
+    <div class="section" id="quiz-section">
+      <h2>Quick Quiz</h2>
+      <p><strong>1. Which of the following is most associated with business continuity?</strong></p>
+      <label><input type="radio" name="q1" value="a"> COBIT</label><br>
+      <label><input type="radio" name="q1" value="b"> RTO and RPO</label><br>
+      <label><input type="radio" name="q1" value="c"> PKI and SSL</label><br><br>
+      <button onclick="checkQuiz1()">Submit</button>
+      <p id="quiz-result1" style="font-weight: bold;"></p>
+    </div>
+    <!-- Flashcard 2 -->
+    <div class="section flashcard">
+      <h2>Flashcard</h2>
+      <p><strong>Q:</strong> What’s the purpose of a risk register?</p>
+      <button onclick="document.getElementById('flash2').style.display='block'">Show Answer</button>
+      <p id="flash2" style="display:none;">
+        <strong>A:</strong> A central record of all identified risks, their severity, ownership, and mitigation actions.
+      </p>
+    </div>
+
+    <!-- Final Quiz -->
+    <div class="section" id="quiz-section">
+      <h2>Final Quiz</h2>
+      <p><strong>2. What is the goal of IT Governance?</strong></p>
+      <label><input type="radio" name="q2" value="a"> Optimize audit documentation</label><br>
+      <label><input type="radio" name="q2" value="b"> Align IT with business goals and manage risk</label><br>
+      <label><input type="radio" name="q2" value="c"> Create new IT systems</label><br><br>
+      <button onclick="checkQuiz2()">Submit</button>
+      <p id="quiz-result2" style="font-weight: bold;"></p>
+    </div>
+
+    <!-- Optional Diagram Placeholder -->
+    <div class="section">
+      <h2>📊 Visual Diagram (Coming Soon)</h2>
+      <p>You can include a visual like an <strong>IT Governance Framework</strong> or a <strong>Risk Heat Map</strong> here.</p>
+      <p>Example: <em>Board → Executive Management → IT Strategy Committee → Operational Units</em></p>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Learning Fun. All rights reserved. | Built for CISA Domain 2
+  </footer>
+
+<script>
+  // Collapsible behavior
+  document.querySelectorAll(".collapsible").forEach(button => {
+    button.addEventListener("click", () => {
+      const content = button.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    });
+  });
+
+  // Scroll progress bar
+  window.onscroll = () => {
+    const scroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (scroll / height) * 100;
+    document.getElementById("progress-bar").style.width = scrolled + "%";
+  };
+
+  // PDF export
+  function generatePDF() {
+    const element = document.getElementById("printable");
+    html2pdf().from(element).save("CISA_Domain2_Interactive.pdf");
+  }
+
+  // Quiz 1 logic
+  function checkQuiz1() {
+    const q1 = document.querySelector('input[name="q1"]:checked');
+    const result = document.getElementById('quiz-result1');
+    if (!q1) {
+      result.textContent = "Please select an answer.";
+      result.style.color = "orange";
+    } else if (q1.value === "b") {
+      result.textContent = "✅ Correct!";
+      result.style.color = "green";
+    } else {
+      result.textContent = "❌ Incorrect. Correct answer: RTO and RPO.";
+      result.style.color = "red";
+    }
+  }
+
+  // Quiz 2 logic
+  function checkQuiz2() {
+    const q2 = document.querySelector('input[name="q2"]:checked');
+    const result = document.getElementById('quiz-result2');
+    if (!q2) {
+      result.textContent = "Please select an answer.";
+      result.style.color = "orange";
+    } else if (q2.value === "b") {
+      result.textContent = "✅ Correct!";
+      result.style.color = "green";
+    } else {
+      result.textContent = "❌ Incorrect. Correct answer: Align IT with business goals and manage risk.";
+      result.style.color = "red";
+    }
+  }
+</script>
+
+</body>
+</html>
