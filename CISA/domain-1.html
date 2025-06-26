@@ -12,8 +12,25 @@
     nav { background: #34495e; color: white; display: flex; justify-content: space-between; align-items: center; }
     nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; }
     h1, h2 { color: #2c3e50; }
-    .section, .collapsible-content, .flashcard, #quiz-section { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .collapsible { background-color: #2980b9; color: white; cursor: pointer; padding: 12px; width: 100%; border: none; text-align: left; font-size: 16px; border-radius: 5px; margin-top: 10px; }
+    .section, .collapsible-content, .flashcard, #quiz-section {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .collapsible {
+      background-color: #2980b9;
+      color: white;
+      cursor: pointer;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      font-size: 16px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
     .collapsible-content { display: none; margin-top: 5px; }
     footer { background: #ecf0f1; text-align: center; font-size: 14px; padding: 20px; }
     #progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 5px; background: #ccc; z-index: 9999; }
@@ -22,6 +39,7 @@
 </head>
 <body>
   <div id="progress-container"><div id="progress-bar"></div></div>
+
   <nav>
     <div><strong>Learning Fun</strong></div>
     <div>
@@ -31,92 +49,272 @@
       <a href="#">Linux</a>
     </div>
   </nav>
+
   <header>
     <h1>CISA Domain 1: Information System Auditing Process</h1>
     <button onclick="generatePDF()">📄 Download as PDF</button>
   </header>
+
   <main id="printable">
-    <!-- Collapsible Sections for Domain 1 Topics -->
-    <button class="collapsible">Audit Charter</button>
+
+    <!-- Collapsible Sections Begin -->
+
+    <button class="collapsible">1. Audit Charter</button>
     <div class="collapsible-content">
-      <p>Defines the purpose, authority, and responsibility of the audit function.</p>
-    </div>
-    <button class="collapsible">Audit Standards & ITAF</button>
-    <div class="collapsible-content">
-      <p>Outlines general, performance, and reporting standards by ISACA.</p>
-    </div>
-    <button class="collapsible">Code of Professional Ethics</button>
-    <div class="collapsible-content">
-      <p>Guides ethical behavior including confidentiality and integrity.</p>
-    </div>
-    <button class="collapsible">Audit Planning</button>
-    <div class="collapsible-content">
-      <p>Involves defining scope, objectives, and identifying resources and risks.</p>
-    </div>
-    <button class="collapsible">Risk-Based Planning</button>
-    <div class="collapsible-content">
-      <p>Focuses audit resources on areas of highest risk.</p>
-    </div>
-    <button class="collapsible">Audit Objectives & Universe</button>
-    <div class="collapsible-content">
-      <p>Defines the overall scope of audit coverage and objectives per engagement.</p>
-    </div>
-    <button class="collapsible">Audit Evidence</button>
-    <div class="collapsible-content">
-      <p>Must be sufficient, reliable, relevant, and useful to support audit conclusions.</p>
-    </div>
-    <button class="collapsible">Audit Documentation</button>
-    <div class="collapsible-content">
-      <p>Workpapers that support findings, conclusions, and audit opinion.</p>
-    </div>
-    <button class="collapsible">CAATs</button>
-    <div class="collapsible-content">
-      <p>Computer-Assisted Audit Techniques improve efficiency and depth of testing.</p>
-    </div>
-    <button class="collapsible">Types of Audits</button>
-    <div class="collapsible-content">
+      <p>The audit charter is the foundational document for the IS audit function. It formally grants authority and defines the purpose, scope, and responsibilities of auditors. Without a valid charter, audits lack legitimacy.</p>
       <ul>
-        <li>Compliance</li>
-        <li>Financial</li>
-        <li>Operational</li>
-        <li>IS Audit</li>
-        <li>Integrated</li>
+        <li><strong>Authority:</strong> Provides organizational independence and access to information</li>
+        <li><strong>Responsibility:</strong> Clarifies auditor roles, expectations, and boundaries</li>
+        <li><strong>Approval:</strong> Must be approved by senior management or board-level governance</li>
+        <li><strong>Review:</strong> Should be periodically reviewed and updated</li>
       </ul>
+      <p><em>Real-world tip:</em> Auditors should always validate that a charter exists and is current before starting an audit.</p>
     </div>
-    <button class="collapsible">Audit Reporting & Follow-up</button>
+
+    <button class="collapsible">2. IS Audit Standards (ISACA, ITAF)</button>
     <div class="collapsible-content">
-      <p>Communicating audit findings and tracking corrective actions.</p>
+      <p>ISACA's IT Assurance Framework (ITAF) provides the professional standards and guidelines for IS auditing. These are essential for ensuring audits are consistent, reliable, and defendable.</p>
+      <h4>Structure of ITAF:</h4>
+      <ul>
+        <li><strong>General Standards:</strong> Ethics, objectivity, due care, proficiency</li>
+        <li><strong>Performance Standards:</strong> Risk-based planning, supervision, evidence collection</li>
+        <li><strong>Reporting Standards:</strong> Accuracy, completeness, clarity, and timeliness</li>
+      </ul>
+      <p><em>Real-world insight:</em> Many audit reports fail not due to technical flaws, but because they do not align with professional reporting standards.</p>
     </div>
-    <button class="collapsible">Engagement Supervision</button>
+
+    <button class="collapsible">3. ISACA Code of Professional Ethics</button>
     <div class="collapsible-content">
-      <p>Ensures audit work quality through oversight and review.</p>
+      <p>IS auditors are held to a high ethical standard, defined by ISACA's Code of Ethics. These principles are non-negotiable and guide professional conduct.</p>
+      <ul>
+        <li>Serve stakeholders lawfully, honestly, and diligently</li>
+        <li>Maintain and improve competence through continuing education</li>
+        <li>Provide accurate, fair, and objective information</li>
+        <li>Protect confidential information</li>
+        <li>Comply with relevant laws and regulations</li>
+      </ul>
+      <p><em>Exam tip:</em> Ethics are always tested in scenario-based questions. Understand not just what they say, but how they’re applied.</p>
     </div>
-    <button class="collapsible">Quality Assurance</button>
+
+    <button class="collapsible">4. Audit Planning</button>
     <div class="collapsible-content">
-      <p>Internal and external reviews of the audit function.</p>
+      <p>Audit planning is critical for effectiveness and efficiency. It determines what will be audited, how, by whom, and when.</p>
+      <h4>Steps in Audit Planning:</h4>
+      <ol>
+        <li>Understand business environment and processes</li>
+        <li>Determine audit scope and objectives</li>
+        <li>Perform risk assessment and prioritize areas</li>
+        <li>Define resources, timeframes, and tools</li>
+        <li>Communicate plan with auditees and management</li>
+      </ol>
+      <p><em>Pro tip:</em> Always ensure that audit scope aligns with risk exposure and organizational priorities.</p>
     </div>
-    <button class="collapsible">Use of Experts & Outsourcing</button>
+
+    <button class="collapsible">5. Risk-Based Audit Planning</button>
     <div class="collapsible-content">
-      <p>Auditors may rely on qualified third parties under controlled conditions.</p>
+      <p>Risk-based audit planning ensures that audits focus on areas with the highest potential impact or likelihood of failure.</p>
+      <ul>
+        <li>Uses risk registers, past audit results, and business context</li>
+        <li>Prioritizes systems that affect confidentiality, integrity, or availability (CIA)</li>
+        <li>Considers compliance, financial, and operational risks</li>
+      </ul>
+      <p><em>Real-world application:</em> Auditing high-risk areas first increases audit value and reduces the likelihood of missed critical findings.</p>
     </div>
+
     <!-- Flashcard -->
     <div class="section flashcard">
-      <h2>Flashcard</h2>
-      <p><strong>Q:</strong> What does CAAT stand for?</p>
+      <h2>Flashcard Review</h2>
+      <p><strong>Q:</strong> What are the three categories of ISACA’s ITAF standards?</p>
       <button onclick="document.getElementById('flash1').style.display='block'">Show Answer</button>
-      <p id="flash1" style="display:none;"><strong>A:</strong> Computer-Assisted Audit Techniques</p>
+      <p id="flash1" style="display:none;"><strong>A:</strong> General Standards, Performance Standards, and Reporting Standards.</p>
     </div>
+
     <!-- Quiz -->
     <div class="section" id="quiz-section">
-      <h2>Quiz</h2>
-      <p><strong>1. Which of the following defines the audit function's purpose and scope?</strong></p>
-      <label><input type="radio" name="q1" value="a"> Audit Universe</label><br>
-      <label><input type="radio" name="q1" value="b"> Audit Charter</label><br>
-      <label><input type="radio" name="q1" value="c"> Audit Risk Assessment</label><br><br>
+      <h2>Quick Quiz</h2>
+      <p><strong>1. What is the primary purpose of the audit charter?</strong></p>
+      <label><input type="radio" name="q1" value="a"> To define audit tools</label><br>
+      <label><input type="radio" name="q1" value="b"> To grant authority and define scope</label><br>
+      <label><input type="radio" name="q1" value="c"> To assign team schedules</label><br><br>
       <button onclick="checkQuiz1()">Submit</button>
       <p id="quiz-result1" style="font-weight: bold;"></p>
     </div>
+
+        <button class="collapsible">6. Audit Objectives</button>
+    <div class="collapsible-content">
+      <p>The audit objectives define what the audit seeks to achieve. Objectives should be clear, measurable, and aligned with business and audit risk priorities.</p>
+      <ul>
+        <li>Assess the design and operating effectiveness of controls</li>
+        <li>Ensure compliance with laws, regulations, and internal policies</li>
+        <li>Evaluate risk management and governance practices</li>
+      </ul>
+      <p><em>Example:</em> For a payroll system audit, objectives may include validating data integrity, access controls, and regulatory compliance.</p>
+    </div>
+
+    <button class="collapsible">7. Audit Evidence</button>
+    <div class="collapsible-content">
+      <p>Audit evidence forms the foundation of audit findings. It must be sufficient, relevant, reliable, and timely.</p>
+      <ul>
+        <li>Can be physical, documentary, electronic, or testimonial</li>
+        <li>Collected through observation, interviews, system walkthroughs, and control testing</li>
+        <li>Should be retained for post-audit verification and defense</li>
+      </ul>
+      <p><em>ISACA Tip:</em> Use triangulation — collect evidence from multiple sources to confirm facts.</p>
+    </div>
+
+    <button class="collapsible">8. Audit Documentation</button>
+    <div class="collapsible-content">
+      <p>Audit documentation supports conclusions, provides a trail of work performed, and is essential for quality assurance and future audits.</p>
+      <ul>
+        <li>Includes audit plans, working papers, test results, findings, and correspondence</li>
+        <li>Must be clear, complete, and well-organized</li>
+        <li>Should allow another auditor to re-perform the audit and reach the same conclusion</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">9. Audit Universe</button>
+    <div class="collapsible-content">
+      <p>The audit universe is a complete list of auditable entities in the organization, such as processes, systems, departments, and third-party relationships.</p>
+      <ul>
+        <li>Used for long-term audit planning and coverage analysis</li>
+        <li>Often visualized in a risk heat map or audit schedule</li>
+        <li>Should be updated periodically based on business and risk changes</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">10. Types of Audits</button>
+    <div class="collapsible-content">
+      <p>Each audit type has unique objectives, stakeholders, and methods. Understanding these is critical for exam success and real-world application.</p>
+      <ul>
+        <li><strong>IS Audit:</strong> Focuses on IT systems and controls</li>
+        <li><strong>Compliance Audit:</strong> Checks adherence to laws, regulations, or internal policies</li>
+        <li><strong>Financial Audit:</strong> Examines financial statements and accounting practices</li>
+        <li><strong>Operational Audit:</strong> Evaluates efficiency, effectiveness, and economy</li>
+        <li><strong>Forensic Audit:</strong> Investigates fraud or suspected misconduct</li>
+        <li><strong>Integrated Audit:</strong> Combines IS, operational, and financial auditing</li>
+        <li><strong>Third-party Audit:</strong> Evaluates service providers (e.g., SOC reports)</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">11. Computer-Assisted Audit Techniques (CAATs)</button>
+    <div class="collapsible-content">
+      <p>CAATs help auditors automate and enhance audit procedures, increasing efficiency and scope.</p>
+      <ul>
+        <li>Include data analysis tools (Excel, ACL, IDEA)</li>
+        <li>Used to test controls, extract anomalies, and identify patterns</li>
+        <li>Can automate sampling, filtering, and exception reporting</li>
+        <li>Critical for auditing large or complex IT environments</li>
+      </ul>
+      <p><strong>Examples:</strong> Extracting duplicate transactions, analyzing login attempts, verifying user access rights.</p>
+    </div>
+
+    <button class="collapsible">12. Audit Resource Management</button>
+    <div class="collapsible-content">
+      <p>Audit resource management ensures that the right people, tools, and training are in place to meet audit objectives.</p>
+      <ul>
+        <li>Staff should possess relevant skills (e.g., technical, analytical, communication)</li>
+        <li>Ongoing training must address emerging risks like cloud, cybersecurity, and AI</li>
+        <li>Resource planning must align with the audit calendar and business priorities</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">13. Outsourcing and Use of Experts</button>
+    <div class="collapsible-content">
+      <p>In complex audits, organizations may outsource audit tasks or use subject matter experts (SMEs) to support specific areas.</p>
+      <ul>
+        <li>SMEs may include forensic analysts, penetration testers, or data scientists</li>
+        <li>Auditors must supervise all external work to ensure quality and compliance</li>
+        <li>Engagement contracts must define roles, deliverables, and confidentiality terms</li>
+      </ul>
+    </div>
+
+    <!-- Flashcard -->
+    <div class="section flashcard">
+      <h2>Flashcard Review</h2>
+      <p><strong>Q:</strong> What is the difference between audit evidence and audit documentation?</p>
+      <button onclick="document.getElementById('flash2').style.display='block'">Show Answer</button>
+      <p id="flash2" style="display:none;">
+        <strong>A:</strong> Audit evidence supports findings; audit documentation records the audit work and process.
+      </p>
+    </div>
+
+    <!-- Quiz -->
+    <div class="section" id="quiz-section">
+      <h2>Quick Quiz</h2>
+      <p><strong>2. Which of the following best describes CAATs?</strong></p>
+      <label><input type="radio" name="q2" value="a"> Manual testing techniques</label><br>
+      <label><input type="radio" name="q2" value="b"> Interview checklists</label><br>
+      <label><input type="radio" name="q2" value="c"> Computer tools used to enhance auditing tasks</label><br><br>
+      <button onclick="checkQuiz2()">Submit</button>
+      <p id="quiz-result2" style="font-weight: bold;"></p>
+    </div>
+<button class="collapsible">14. Engagement Planning & Supervision</button>
+    <div class="collapsible-content">
+      <p>Proper planning and supervision ensure that audit engagements are well-executed and meet professional standards.</p>
+      <ul>
+        <li>Engagement plan includes scope, methodology, roles, and timeline</li>
+        <li>Supervision ensures quality control and supports less experienced auditors</li>
+        <li>Includes review of workpapers, discussions, and timely escalations</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">15. Communication & Reporting Techniques</button>
+    <div class="collapsible-content">
+      <p>Effective communication ensures that audit findings are understood, acted upon, and respected.</p>
+      <ul>
+        <li>Use clear, concise, and objective language</li>
+        <li>Include issue, impact, root cause, and recommendation</li>
+        <li>Draft reports reviewed internally before finalizing</li>
+        <li>Communication should be timely and tailored to the audience</li>
+      </ul>
+      <p><strong>Reporting Types:</strong> Formal reports, management letters, executive summaries</p>
+    </div>
+
+    <button class="collapsible">16. Quality Assurance & Improvement Program</button>
+    <div class="collapsible-content">
+      <p>A Quality Assurance & Improvement Program (QAIP) ensures continuous improvement in audit performance.</p>
+      <ul>
+        <li>Includes internal and external assessments</li>
+        <li>Reviews audit processes, tools, training, and compliance</li>
+        <li>Results feed back into resource planning and methodology updates</li>
+      </ul>
+      <p><strong>Best Practice:</strong> QAIP should align with ISACA and IIA standards and be performed at least every 5 years.</p>
+    </div>
+
+    <button class="collapsible">17. IT Governance & Oversight</button>
+    <div class="collapsible-content">
+      <p>IT governance ensures that IT supports business goals while managing risks and resources responsibly.</p>
+      <ul>
+        <li>IS auditors evaluate governance practices like COBIT, ITIL, ISO/IEC 38500</li>
+        <li>Includes roles, responsibilities, accountability, and decision-making structures</li>
+        <li>Effective governance helps prioritize investments and align IT with enterprise strategy</li>
+      </ul>
+      <p><strong>Real-World Tip:</strong> IT governance maturity is a common audit focus area.</p>
+    </div>
+
+    <!-- Summary Flashcard -->
+    <div class="section flashcard">
+      <h2>Flashcard Summary</h2>
+      <p><strong>Q:</strong> What are the key components of a high-quality IS audit?</p>
+      <button onclick="document.getElementById('flash3').style.display='block'">Show Answer</button>
+      <p id="flash3" style="display:none;">
+        <strong>A:</strong> Clear audit charter, standards-based execution, effective planning, strong evidence and documentation, skilled auditors, and useful reporting.
+      </p>
+    </div>
+
+    <!-- Final Quiz -->
+    <div class="section" id="quiz-section">
+      <h2>Final Quiz</h2>
+      <p><strong>3. What does a QAIP aim to do?</strong></p>
+      <label><input type="radio" name="q3" value="a"> Reduce audit duration</label><br>
+      <label><input type="radio" name="q3" value="b"> Improve audit quality and compliance</label><br>
+      <label><input type="radio" name="q3" value="c"> Increase penalties</label><br><br>
+      <button onclick="checkQuiz3()">Submit</button>
+      <p id="quiz-result3" style="font-weight: bold;"></p>
+    </div>
   </main>
+
+    
   <footer>
     &copy; 2025 Learning Fun. All rights reserved.
   </footer>
@@ -133,21 +331,75 @@
       const scrolled = (scroll / height) * 100;
       document.getElementById("progress-bar").style.width = scrolled + "%";
     };
+    
+  // Collapsible logic
+  document.querySelectorAll(".collapsible").forEach(button => {
+    button.addEventListener("click", () => {
+      const content = button.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    });
+  });
+
+  // Scroll progress bar
+  window.onscroll = () => {
+    const scroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (scroll / height) * 100;
+    document.getElementById("progress-bar").style.width = scrolled + "%";
+  };
+
+  // PDF export
+  function generatePDF() {
+    const element = document.getElementById("printable");
+    html2pdf().from(element).save("CISA_Domain1_Interactive.pdf");
+  }
+
+  // Quiz 1
+  function checkQuiz1() {
+    const q1 = document.querySelector('input[name="q1"]:checked');
+    const result = document.getElementById('quiz-result1');
+    if (!q1) {
+      result.textContent = "Please select an answer.";
+      result.style.color = "orange";
+    } else if (q1.value === "b") {
+      result.textContent = "✅ Correct!";
+      result.style.color = "green";
+    } else {
+      result.textContent = "❌ Incorrect. Correct answer: To grant authority and define scope.";
+      result.style.color = "red";
+    }
+  }
+
+  // Quiz 2
+  function checkQuiz2() {
+    const q2 = document.querySelector('input[name="q2"]:checked');
+    const result = document.getElementById('quiz-result2');
+    if (!q2) {
+      result.textContent = "Please select an answer.";
+      result.style.color = "orange";
+    } else if (q2.value === "c") {
+      result.textContent = "✅ Correct!";
+      result.style.color = "green";
+    } else {
+      result.textContent = "❌ Incorrect. Correct answer: Computer tools used to enhance auditing tasks.";
+      result.style.color = "red";
+    }
+  }
+</script>
     function generatePDF() {
       const element = document.getElementById("printable");
       html2pdf().from(element).save("CISA_Domain1.pdf");
-    }
-    function checkQuiz1() {
-      const q1 = document.querySelector('input[name="q1"]:checked');
-      const result = document.getElementById('quiz-result1');
-      if (!q1) {
+   function checkQuiz3() {
+      const q3 = document.querySelector('input[name="q3"]:checked');
+      const result = document.getElementById('quiz-result3');
+      if (!q3) {
         result.textContent = "Please select an answer.";
         result.style.color = "orange";
-      } else if (q1.value === "b") {
+      } else if (q3.value === "b") {
         result.textContent = "✅ Correct!";
         result.style.color = "green";
       } else {
-        result.textContent = "❌ Incorrect. The correct answer is: Audit Charter.";
+        result.textContent = "❌ Incorrect. Correct answer: Improve audit quality and compliance.";
         result.style.color = "red";
       }
     }
