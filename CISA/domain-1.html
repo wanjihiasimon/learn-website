@@ -318,21 +318,8 @@
   <footer>
     &copy; 2025 Learning Fun. All rights reserved.
   </footer>
-  <script>
-    document.querySelectorAll(".collapsible").forEach(button => {
-      button.addEventListener("click", () => {
-        const content = button.nextElementSibling;
-        content.style.display = content.style.display === "block" ? "none" : "block";
-      });
-    });
-    window.onscroll = () => {
-      const scroll = document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (scroll / height) * 100;
-      document.getElementById("progress-bar").style.width = scrolled + "%";
-    };
-    
-  // Collapsible logic
+<script>
+  // Collapsible behavior
   document.querySelectorAll(".collapsible").forEach(button => {
     button.addEventListener("click", () => {
       const content = button.nextElementSibling;
@@ -385,24 +372,23 @@
       result.style.color = "red";
     }
   }
-</script>
-    function generatePDF() {
-      const element = document.getElementById("printable");
-      html2pdf().from(element).save("CISA_Domain1.pdf");
-   function checkQuiz3() {
-      const q3 = document.querySelector('input[name="q3"]:checked');
-      const result = document.getElementById('quiz-result3');
-      if (!q3) {
-        result.textContent = "Please select an answer.";
-        result.style.color = "orange";
-      } else if (q3.value === "b") {
-        result.textContent = "✅ Correct!";
-        result.style.color = "green";
-      } else {
-        result.textContent = "❌ Incorrect. Correct answer: Improve audit quality and compliance.";
-        result.style.color = "red";
-      }
+
+  // Quiz 3
+  function checkQuiz3() {
+    const q3 = document.querySelector('input[name="q3"]:checked');
+    const result = document.getElementById('quiz-result3');
+    if (!q3) {
+      result.textContent = "Please select an answer.";
+      result.style.color = "orange";
+    } else if (q3.value === "b") {
+      result.textContent = "✅ Correct!";
+      result.style.color = "green";
+    } else {
+      result.textContent = "❌ Incorrect. Correct answer: Improve audit quality and compliance.";
+      result.style.color = "red";
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>
