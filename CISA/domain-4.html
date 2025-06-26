@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CISA Domain 4 - Operations & Business Resilience (Enriched)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin:0; padding:0; }
+    #progress-container { position:fixed; top:0; left:0; width:100%; height:6px; background:#ddd; z-index:1000; }
+    #progress-bar { height:6px; width:0; background:#27ae60; }
+    nav { background:#2c3e50; color:#fff; padding:10px 20px; display:flex; justify-content:space-between; }
+    nav a { color:white; margin:0 10px; text-decoration:none; }
+    header,main,footer { max-width:960px; margin:auto; padding:20px; }
+    .section { background:white; margin-bottom:20px; padding:15px; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+    .collapsible { background:#2980b9; color:white; cursor:pointer; padding:10px; border:none;
+      text-align:left; width:100%; font-size:16px; border-radius:5px; }
+    .content { display:none; padding:10px; background:#ecf0f1; margin-top:5px; }
+    .flashcard, .quiz { margin-top:30px; background:#dff9fb; padding:15px; border-left:4px solid #3498db; }
+    .quiz label { display:block; margin:5px 0; }
+  </style>
+</head>
+<body>
+
+<div id="progress-container"><div id="progress-bar"></div></div>
+
+<nav>
+  <div><strong>Learning Fun</strong></div>
+  <div>
+    <a href="../index.html">Home</a>
+    <a href="../cisa.html">CISA</a>
+    <a href="../ccna.html">CCNA</a>
+    <a href="../linux.html">Linux</a>
+  </div>
+</nav>
+
+<header>
+  <h1>CISA Domain 4 – Information Systems Operations & Business Resilience</h1>
+  <button onclick="generatePDF()">📄 Download PDF</button>
+</header>
+
+<main id="printable">
+  <!-- Collapsible sections -->
+  <div class="section">
+    <button class="collapsible">1. IT Asset & Configuration Management</button>
+    <div class="content">
+      <p>Inventory management ensures visibility of hardware, software, and licensing.</p>
+      <ul>
+        <li>Track asset owner, location, status, lifecycle, and classification.</li>
+        <li>Configuration management documents baseline, versions, and relationships.</li>
+        <li>Change/configuration control ensures authorized changes are tested and recorded.</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">2. Capacity, Performance & Availability Management</button>
+    <div class="content">
+      <p>Ensures system meets business needs in performance and resiliency.</p>
+      <ul>
+        <li>Monitor CPU, memory, storage, network usage.</li>
+        <li>Plan capacity based on trends and business growth.</li>
+        <li>Enforce availability through redundancy and fault-tolerant designs.</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">3. Job Scheduling & System Interfaces</button>
+    <div class="content">
+      <ul>
+        <li>Central scheduling systems manage batch processes and workflows.</li>
+        <li>System interfaces ensure secure, accurate data transfers between systems.</li>
+        <li>Monitor failures, retries, and exceptions with alerting and auditing.</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">4. Incident, Problem & Change Management</button>
+    <div class="content">
+      <ul>
+        <li>Incident management restores normal service ASAP using ITIL framework.</li>
+        <li>Problem management identifies root causes to prevent recurrence.</li>
+        <li>Change management ensures controlled updates (CAB reviews, rollback plans).</li>
+        <li>Patch management updates systems securely and timely.</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">5. Service Level Management (SLAs/OLAs)</button>
+    <div class="content">
+      <p>Defines and measures IT service performance and accountability:</p>
+      <ul>
+        <li>SLAs with external clients, OLAs internally.</li>
+        <li>Track KPIs: uptime, response, resolution times.</li>
+        <li>Use dashboards and monitoring to validate compliance.</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">6. Operational Log Management</button>
+    <div class="content">
+      <p>Logs support troubleshooting, compliance, and forensic analysis:</p>
+      <ul>
+        <li>Collect logs from servers, apps, databases, and networks.</li>
+        <li>Secure log storage and retention per policy.</li>
+        <li>Use alerting for anomalies (e.g., multiple failures).</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">7. Database Management & Data Quality</button>
+    <div class="content">
+      <p>Ensures data accuracy, integrity, and availability:</p>
+      <ul>
+        <li>DBMS backup/recovery, performance tuning, indexing.</li>
+        <li>Manage schema changes, user access, and lifecycle.</li>
+        <li>Validate data quality: completeness, accuracy, retention policies.</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">8. Business Impact Analysis (BIA)</button>
+    <div class="content">
+      <p>Identifies critical processes and recovery priorities:</p>
+      <ul>
+        <li>Assess financial, operational, reputational impacts of outages.</li>
+        <li>Define Recovery Time Objective (RTO) and Recovery Point Objective (RPO).</li>
+        <li>Involve business owners and update annually.</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">9. Business Continuity & Disaster Recovery Planning</button>
+    <div class="content">
+      <ul>
+        <li>BCP defines strategies to maintain operations during disruptions.</li>
+        <li>DRP focuses on IT recovery, including alternate sites (hot/warm/cold).</li>
+        <li>Include communications, pandemic, cyber-attack response.</li>
+      </ul>
+    </div>
+
+    <button class="collapsible">10. DRP Testing & Operational Resilience</button>
+    <div class="content">
+      <ul>
+        <li>Testing: tabletop, structured walk-through, parallel/full interruption tests.</li>
+        <li>Validate RTO/RPO assumptions and infrastructure readiness.</li>
+        <li>Review test results and remediate gaps.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Flashcards -->
+  <div class="section flashcard">
+    <h2>🧠 Flashcards</h2>
+    <p><strong>Q:</strong> Difference between RPO and RTO?<br>
+       <em>Reveal:</em> <span onclick="this.nextElementSibling.style.display='block'; this.style.display='none';" style="cursor:pointer;color:blue;">Show Answer</span></p>
+    <p style="display:none;"><strong>A:</strong> RTO = max downtime; RPO = max data loss tolerated.</p>
+
+    <p><strong>Q:</strong> What is the purpose of SLA vs OLA?<br>
+       <em>Reveal:</em> <span onclick="this.nextElementSibling.style.display='block'; this.style.display='none';" style="cursor:pointer;color:blue;">Show Answer</span></p>
+    <p style="display:none;"><strong>A:</strong> SLA = external agreement; OLA = internal support agreement.</p>
+  </div>
+
+  <!-- Quiz -->
+  <div class="section quiz">
+    <h2>❓ Quiz</h2>
+    <p><strong>1. Which process restores services quickly after failure?</strong></p>
+    <label><input type="radio" name="q1" value="a"> Problem Management</label>
+    <label><input type="radio" name="q1" value="b"> Incident Management</label>
+    <label><input type="radio" name="q1" value="c"> Change Management</label>
+    <p id="r1" style="font-weight:bold;"></p>
+
+    <p><strong>2. What type of DR site is ready immediately?</strong></p>
+    <label><input type="radio" name="q2" value="a"> Cold Site</label>
+    <label><input type="radio" name="q2" value="b"> Warm Site</label>
+    <label><input type="radio" name="q2" value="c"> Hot Site</label>
+    <p id="r2" style="font-weight:bold;"></p>
+
+    <button onclick="checkQuiz()">Submit Answers</button>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 Learning Fun • CISA Domain 4 Detailed Study</p>
+</footer>
+
+<script>
+  document.querySelectorAll(".collapsible").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const c=btn.nextElementSibling;
+      c.style.display = c.style.display === 'block'?'none':'block';
+    });
+  });
+  window.onscroll = ()=> {
+    const s=document.documentElement.scrollTop;
+    const h=document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById('progress-bar').style.width = (s/h*100)+'%';
+  };
+  function generatePDF(){
+    html2pdf().from(document.getElementById('printable')).save('CISA_Domain4_Interactive.pdf');
+  }
+  function checkQuiz(){
+    const q1 = document.querySelector('input[name="q1"]:checked');
+    const q2 = document.querySelector('input[name="q2"]:checked');
+    const r1 = document.getElementById('r1'), r2 = document.getElementById('r2');
+    r1.textContent = q1?.value==='b' ? '✅ Correct!' : '❌ Incorrect. Incident Management restores services.';
+    r1.style.color = q1?.value==='b'?'green':'red';
+    r2.textContent = q2?.value==='c' ? '✅ Correct!' : '❌ Incorrect. A Hot Site is immediate.';
+    r2.style.color = q2?.value==='c'?'green':'red';
+  }
+</script>
+</body>
+</html>
